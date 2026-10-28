@@ -46,6 +46,10 @@ The database is created automatically at:
 `data/asset_management.db`
 
 Back up from the app using **Backup Database**. Keep backups on another drive too.
+To start with an empty database, use **Clear All Data** in the sidebar. This permanently
+deletes all departments, groups, assets, fault reports, repairs, and movement history
+while keeping the database structure. Make a backup first if any existing records may
+be needed later.
 
 Application events and errors are recorded in:
 `logs/application.log`

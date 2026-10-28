@@ -427,6 +427,28 @@ def dashboard_counts():
         return {"total":total,"working":working,"faulty":faulty,"repair":repair,
                 "groups":groups,"open_faults":open_faults}
 
+def clear_all_data():
+    """Remove every user-created record while keeping the database schema."""
+    tables = (
+        "setup_assets",
+        "asset_movements",
+        "repair_records",
+        "fault_reports",
+        "assets",
+        "computer_setups",
+        "asset_groups",
+        "locations",
+        "departments",
+    )
+    con = connect()
+    try:
+        for table in tables:
+            con.execute(f"DELETE FROM {table}")
+        con.execute("DELETE FROM sqlite_sequence")
+        con.commit()
+    finally:
+        con.close()
+
 def get_asset_by_code(code):
     with connect() as con:
         return con.execute("SELECT * FROM assets WHERE asset_code=?", (code,)).fetchone()

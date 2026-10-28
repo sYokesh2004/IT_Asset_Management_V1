@@ -532,6 +532,10 @@ class MainWindow(QMainWindow):
         backup.setObjectName("NavButton")
         backup.clicked.connect(self.backup)
         side.addWidget(backup)
+        clear_data = QPushButton("Clear All Data")
+        clear_data.setObjectName("DangerButton")
+        clear_data.clicked.connect(self.clear_all_data)
+        side.addWidget(clear_data)
         root_layout.addWidget(sidebar)
         content = QWidget()
         content_layout = QVBoxLayout(content)
@@ -849,6 +853,29 @@ class MainWindow(QMainWindow):
                 QMessageBox.information(self, "Movement saved",
                                         "Movement history saved and the asset's current assignment was updated.")
             except Exception as e: show_error(self, e)
+
+    def clear_all_data(self):
+        answer = QMessageBox.warning(
+            self,
+            "Clear all database data",
+            "This will permanently delete all departments, groups, assets, fault reports, "
+            "repairs, and movement history.\n\nThe database structure will be kept, but "
+            "this action cannot be undone. Continue?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No,
+        )
+        if answer != QMessageBox.StandardButton.Yes:
+            return
+        try:
+            db.clear_all_data()
+            self.refresh_all()
+            QMessageBox.information(
+                self,
+                "Database cleared",
+                "All data was removed. You can now add new records.",
+            )
+        except Exception as exc:
+            show_error(self, exc)
 
     def qr_sticker(self):
         asset_id = self.selected_id(self.asset_table, self.asset_row_ids)
