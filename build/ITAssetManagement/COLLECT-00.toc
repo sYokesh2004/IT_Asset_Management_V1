@@ -3,134 +3,609 @@
    'Files\\IT_Asset_Management_V1\\build\\ITAssetManagement\\ITAssetManagement.exe',
    'EXECUTABLE'),
   ('PIL\\_avif.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PIL\\_avif.cp313-win_amd64.pyd',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PIL\\_avif.cp313-win_amd64.pyd',
    'EXTENSION'),
   ('PIL\\_imaging.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PIL\\_imaging.cp313-win_amd64.pyd',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PIL\\_imaging.cp313-win_amd64.pyd',
    'EXTENSION'),
   ('PIL\\_imagingcms.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PIL\\_imagingcms.cp313-win_amd64.pyd',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PIL\\_imagingcms.cp313-win_amd64.pyd',
    'EXTENSION'),
   ('PIL\\_imagingft.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PIL\\_imagingft.cp313-win_amd64.pyd',
-   'EXTENSION'),
-  ('PIL\\_imagingmath.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PIL\\_imagingmath.cp313-win_amd64.pyd',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PIL\\_imagingft.cp313-win_amd64.pyd',
    'EXTENSION'),
   ('PIL\\_imagingtk.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PIL\\_imagingtk.cp313-win_amd64.pyd',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PIL\\_imagingtk.cp313-win_amd64.pyd',
    'EXTENSION'),
   ('PIL\\_webp.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PIL\\_webp.cp313-win_amd64.pyd',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PIL\\_webp.cp313-win_amd64.pyd',
    'EXTENSION'),
   ('PySide6\\MSVCP140.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\MSVCP140.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\MSVCP140.dll',
    'BINARY'),
   ('PySide6\\MSVCP140_1.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\MSVCP140_1.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\MSVCP140_1.dll',
    'BINARY'),
   ('PySide6\\MSVCP140_2.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\MSVCP140_2.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\MSVCP140_2.dll',
    'BINARY'),
   ('PySide6\\Qt6Core.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\Qt6Core.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\Qt6Core.dll',
    'BINARY'),
   ('PySide6\\Qt6Gui.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\Qt6Gui.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\Qt6Gui.dll',
    'BINARY'),
   ('PySide6\\Qt6Network.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\Qt6Network.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\Qt6Network.dll',
+   'BINARY'),
+  ('PySide6\\Qt6OpenGL.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\Qt6OpenGL.dll',
+   'BINARY'),
+  ('PySide6\\Qt6Pdf.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\Qt6Pdf.dll',
+   'BINARY'),
+  ('PySide6\\Qt6Qml.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\Qt6Qml.dll',
+   'BINARY'),
+  ('PySide6\\Qt6QmlMeta.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\Qt6QmlMeta.dll',
+   'BINARY'),
+  ('PySide6\\Qt6QmlModels.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\Qt6QmlModels.dll',
+   'BINARY'),
+  ('PySide6\\Qt6QmlWorkerScript.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\Qt6QmlWorkerScript.dll',
+   'BINARY'),
+  ('PySide6\\Qt6Quick.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\Qt6Quick.dll',
    'BINARY'),
   ('PySide6\\Qt6Svg.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\Qt6Svg.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\Qt6Svg.dll',
+   'BINARY'),
+  ('PySide6\\Qt6VirtualKeyboard.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\Qt6VirtualKeyboard.dll',
    'BINARY'),
   ('PySide6\\Qt6Widgets.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\Qt6Widgets.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\Qt6Widgets.dll',
    'BINARY'),
   ('PySide6\\QtCore.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\QtCore.pyd',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\QtCore.pyd',
    'EXTENSION'),
   ('PySide6\\QtGui.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\QtGui.pyd',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\QtGui.pyd',
    'EXTENSION'),
   ('PySide6\\QtNetwork.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\QtNetwork.pyd',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\QtNetwork.pyd',
    'EXTENSION'),
   ('PySide6\\QtWidgets.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\QtWidgets.pyd',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\QtWidgets.pyd',
    'EXTENSION'),
   ('PySide6\\VCRUNTIME140.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\VCRUNTIME140.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\VCRUNTIME140.dll',
    'BINARY'),
   ('PySide6\\VCRUNTIME140_1.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\VCRUNTIME140_1.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\VCRUNTIME140_1.dll',
    'BINARY'),
   ('PySide6\\opengl32sw.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\opengl32sw.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\opengl32sw.dll',
    'BINARY'),
   ('PySide6\\plugins\\generic\\qtuiotouchplugin.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\generic\\qtuiotouchplugin.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\generic\\qtuiotouchplugin.dll',
    'BINARY'),
   ('PySide6\\plugins\\iconengines\\qsvgicon.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\iconengines\\qsvgicon.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\iconengines\\qsvgicon.dll',
    'BINARY'),
   ('PySide6\\plugins\\imageformats\\qgif.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\imageformats\\qgif.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qgif.dll',
    'BINARY'),
   ('PySide6\\plugins\\imageformats\\qicns.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\imageformats\\qicns.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qicns.dll',
    'BINARY'),
   ('PySide6\\plugins\\imageformats\\qico.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\imageformats\\qico.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qico.dll',
    'BINARY'),
   ('PySide6\\plugins\\imageformats\\qjpeg.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\imageformats\\qjpeg.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qjpeg.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\imageformats\\qpdf.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qpdf.dll',
    'BINARY'),
   ('PySide6\\plugins\\imageformats\\qsvg.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\imageformats\\qsvg.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qsvg.dll',
    'BINARY'),
   ('PySide6\\plugins\\imageformats\\qtga.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\imageformats\\qtga.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qtga.dll',
    'BINARY'),
   ('PySide6\\plugins\\imageformats\\qtiff.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\imageformats\\qtiff.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qtiff.dll',
    'BINARY'),
   ('PySide6\\plugins\\imageformats\\qwbmp.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\imageformats\\qwbmp.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qwbmp.dll',
    'BINARY'),
   ('PySide6\\plugins\\imageformats\\qwebp.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\imageformats\\qwebp.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qwebp.dll',
    'BINARY'),
   ('PySide6\\plugins\\networkinformation\\qnetworklistmanager.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\networkinformation\\qnetworklistmanager.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\networkinformation\\qnetworklistmanager.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll',
    'BINARY'),
   ('PySide6\\plugins\\platforms\\qdirect2d.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\platforms\\qdirect2d.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qdirect2d.dll',
    'BINARY'),
   ('PySide6\\plugins\\platforms\\qminimal.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\platforms\\qminimal.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qminimal.dll',
    'BINARY'),
   ('PySide6\\plugins\\platforms\\qoffscreen.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\platforms\\qoffscreen.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qoffscreen.dll',
    'BINARY'),
   ('PySide6\\plugins\\platforms\\qwindows.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\platforms\\qwindows.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qwindows.dll',
    'BINARY'),
   ('PySide6\\plugins\\styles\\qmodernwindowsstyle.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\styles\\qmodernwindowsstyle.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\styles\\qmodernwindowsstyle.dll',
    'BINARY'),
   ('PySide6\\plugins\\tls\\qcertonlybackend.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\tls\\qcertonlybackend.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\tls\\qcertonlybackend.dll',
    'BINARY'),
   ('PySide6\\plugins\\tls\\qopensslbackend.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\tls\\qopensslbackend.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\tls\\qopensslbackend.dll',
    'BINARY'),
   ('PySide6\\plugins\\tls\\qschannelbackend.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\plugins\\tls\\qschannelbackend.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\plugins\\tls\\qschannelbackend.dll',
    'BINARY'),
   ('PySide6\\pyside6.abi3.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\PySide6\\pyside6.abi3.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\pyside6.abi3.dll',
    'BINARY'),
+  ('PySide6\\translations\\qt_ar.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ar.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_bg.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_bg.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_ca.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ca.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_cs.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_cs.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_da.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_da.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_de.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_de.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_en.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_en.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_es.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_es.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_fa.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fa.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_fi.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fi.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_fr.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_gd.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_gd.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_gl.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_gl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_he.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_he.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ar.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ar.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_bg.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_bg.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ca.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ca.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_cs.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_cs.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_da.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_da.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_de.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_de.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_en.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_en.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_es.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_es.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_fr.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_fr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_gl.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_gl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_hr.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_hr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_hu.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_hu.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_it.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_it.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ja.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ja.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ka.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ka.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_kk.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_kk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ko.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ko.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_nl.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_nl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_nn.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_nn.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_pl.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_pl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_pt_BR.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_pt_BR.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ru.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ru.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_sk.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_sl.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_sv.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sv.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_tr.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_tr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_uk.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_uk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_zh_CN.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_zh_CN.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_zh_TW.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_zh_TW.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_hr.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_hr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_hu.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_hu.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_it.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_it.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_ja.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ja.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_ka.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ka.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_kk.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_kk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_ko.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ko.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_lg.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lg.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_lt.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lt.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_lv.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lv.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_nl.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_nl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_nn.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_nn.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_pl.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_pt_BR.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pt_BR.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_pt_PT.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pt_PT.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_ru.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ru.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_sk.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_sl.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_sv.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sv.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_tr.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_tr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_uk.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_uk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_zh_CN.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_zh_CN.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_zh_TW.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_zh_TW.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ar.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ar.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_bg.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_bg.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ca.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ca.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_cs.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_cs.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_da.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_da.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_de.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_de.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_en.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_en.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_es.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_es.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_fa.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fa.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_fi.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fi.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_fr.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_gd.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_gd.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_he.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_he.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_hr.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_hr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_hu.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_hu.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_it.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_it.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ja.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ja.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ka.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ka.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_kk.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_kk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ko.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ko.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_lg.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_lg.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_lv.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_lv.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_nl.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_nl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_nn.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_nn.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_pl.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_pl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_pt_BR.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_pt_BR.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ru.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ru.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_sk.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_sk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_sv.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_sv.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_tr.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_tr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_uk.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_uk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_zh_CN.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_zh_CN.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_zh_TW.qm',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_zh_TW.qm',
+   'DATA'),
   ('VCRUNTIME140.dll',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\VCRUNTIME140.dll',
@@ -139,10 +614,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\VCRUNTIME140_1.dll',
    'BINARY'),
-  ('_asyncio.pyd',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\_asyncio.pyd',
-   'EXTENSION'),
   ('_bz2.pyd',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\_bz2.pyd',
@@ -167,14 +638,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\_lzma.pyd',
    'EXTENSION'),
-  ('_multiprocessing.pyd',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\_multiprocessing.pyd',
-   'EXTENSION'),
-  ('_overlapped.pyd',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\_overlapped.pyd',
-   'EXTENSION'),
   ('_queue.pyd',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\_queue.pyd',
@@ -190,10 +653,6 @@
   ('_ssl.pyd',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\_ssl.pyd',
-   'EXTENSION'),
-  ('_wmi.pyd',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\_wmi.pyd',
    'EXTENSION'),
   ('assets\\app-icon.ico',
    'D:\\Program Files\\IT_Asset_Management_V1\\assets\\app-icon.ico',
@@ -223,45 +682,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\libssl-3.dll',
    'BINARY'),
-  ('numpy\\core\\_multiarray_tests.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\numpy\\core\\_multiarray_tests.cp313-win_amd64.pyd',
-   'EXTENSION'),
-  ('numpy\\core\\_multiarray_umath.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\numpy\\core\\_multiarray_umath.cp313-win_amd64.pyd',
-   'EXTENSION'),
-  ('numpy\\fft\\_pocketfft_internal.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\numpy\\fft\\_pocketfft_internal.cp313-win_amd64.pyd',
-   'EXTENSION'),
-  ('numpy\\linalg\\_umath_linalg.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\numpy\\linalg\\_umath_linalg.cp313-win_amd64.pyd',
-   'EXTENSION'),
-  ('numpy\\random\\_bounded_integers.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\numpy\\random\\_bounded_integers.cp313-win_amd64.pyd',
-   'EXTENSION'),
-  ('numpy\\random\\_common.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\numpy\\random\\_common.cp313-win_amd64.pyd',
-   'EXTENSION'),
-  ('numpy\\random\\_generator.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\numpy\\random\\_generator.cp313-win_amd64.pyd',
-   'EXTENSION'),
-  ('numpy\\random\\_mt19937.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\numpy\\random\\_mt19937.cp313-win_amd64.pyd',
-   'EXTENSION'),
-  ('numpy\\random\\_pcg64.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\numpy\\random\\_pcg64.cp313-win_amd64.pyd',
-   'EXTENSION'),
-  ('numpy\\random\\_philox.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\numpy\\random\\_philox.cp313-win_amd64.pyd',
-   'EXTENSION'),
-  ('numpy\\random\\_sfc64.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\numpy\\random\\_sfc64.cp313-win_amd64.pyd',
-   'EXTENSION'),
-  ('numpy\\random\\bit_generator.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\numpy\\random\\bit_generator.cp313-win_amd64.pyd',
-   'EXTENSION'),
-  ('numpy\\random\\mtrand.cp313-win_amd64.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\numpy\\random\\mtrand.cp313-win_amd64.pyd',
-   'EXTENSION'),
   ('pyexpat.pyd',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\pyexpat.pyd',
@@ -279,19 +699,24 @@
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\DLLs\\select.pyd',
    'EXTENSION'),
   ('shiboken6\\MSVCP140.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\shiboken6\\MSVCP140.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\shiboken6\\MSVCP140.dll',
    'BINARY'),
   ('shiboken6\\Shiboken.pyd',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\shiboken6\\Shiboken.pyd',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\shiboken6\\Shiboken.pyd',
    'EXTENSION'),
   ('shiboken6\\VCRUNTIME140.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\shiboken6\\VCRUNTIME140.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\shiboken6\\VCRUNTIME140.dll',
    'BINARY'),
   ('shiboken6\\VCRUNTIME140_1.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\shiboken6\\VCRUNTIME140_1.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\shiboken6\\VCRUNTIME140_1.dll',
    'BINARY'),
   ('shiboken6\\shiboken6.abi3.dll',
-   'C:\\Users\\acer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python313\\site-packages\\shiboken6\\shiboken6.abi3.dll',
+   'D:\\Program '
+   'Files\\IT_Asset_Management_V1\\.venv\\Lib\\site-packages\\shiboken6\\shiboken6.abi3.dll',
    'BINARY'),
   ('sqlite3.dll',
    'C:\\Program '
