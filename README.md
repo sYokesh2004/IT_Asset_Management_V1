@@ -6,6 +6,7 @@ A modifiable Windows desktop application built with Python, PySide6 and SQLite.
 
 ## Features
 - Dashboard with asset status counts
+- Dashboard in-stock cards grouped by device type
 - Asset register: add, edit, search and retire assets
 - Type-specific registration fields: CPU, server and laptop component details are shown only for those devices
 - Automatic unique asset IDs
@@ -17,6 +18,8 @@ A modifiable Windows desktop application built with Python, PySide6 and SQLite.
 - Fault and movement forms show asset details before entering report information
 - QR sticker generation (QR code encodes only the Asset ID)
 - Export asset register to Excel
+- Import large asset batches from the exported Excel format or a CSV file
+- Preset dropdown values with an `Other` option for manual entries
 - Local SQLite database and backup
 
 ## 1. Install Python
@@ -46,10 +49,17 @@ The database is created automatically at:
 `data/asset_management.db`
 
 Back up from the app using **Backup Database**. Keep backups on another drive too.
-To start with an empty database, use **Clear All Data** in the sidebar. This permanently
+To start with an empty database, open the **Clear Data** page from the sidebar and click
+the **Clear All Data** button. This permanently
 deletes all departments, groups, assets, fault reports, repairs, and movement history
 while keeping the database structure. Make a backup first if any existing records may
 be needed later.
+
+To bulk-load assets, open **Assets**, choose **Import Excel / CSV**, and select either
+an `.xlsx` file exported by the app or a CSV with the same column headings. Asset IDs
+are generated automatically. Department values must match an existing department code
+or name, and Parent ID values must match an existing parent group. The import is
+validated as one transaction, so an invalid row leaves the database unchanged.
 
 Application events and errors are recorded in:
 `logs/application.log`

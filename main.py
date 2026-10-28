@@ -1,15 +1,16 @@
 import os
 import sys
+import csv
 import logging
 from logging.handlers import RotatingFileHandler
 from datetime import date
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QDate
 from PySide6.QtGui import QPixmap, QIcon
 from PySide6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QFrame, QLabel, QPushButton, QVBoxLayout,
     QHBoxLayout, QStackedWidget, QGridLayout, QLineEdit, QComboBox, QTableWidget,
     QTableWidgetItem, QMessageBox, QDialog, QFormLayout, QTextEdit, QDateEdit,
-    QDoubleSpinBox, QFileDialog, QHeaderView, QAbstractItemView, QScrollArea
+    QDoubleSpinBox, QFileDialog, QHeaderView, QAbstractItemView
 )
 import db
 from styles import APP_STYLESHEET
@@ -27,6 +28,43 @@ APP_DIR = (
 LOG_DIR = os.path.join(APP_DIR, "logs")
 LOG_PATH = os.path.join(LOG_DIR, "application.log")
 logger = logging.getLogger("it_asset_manager")
+
+def manual_combo(options, placeholder="Select an option"):
+    combo = QComboBox()
+    combo.addItem(placeholder, None)
+    combo.addItems(options)
+    if "Other" not in options:
+        combo.addItem("Other")
+    combo.setEditable(False)
+    combo.setMaxVisibleItems(8)
+    combo.view().setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
+    combo.setProperty("manualOptions", tuple(options) + (("Other",) if "Other" not in options else ()))
+
+    def selection_changed(value):
+        if value == "Other" and not combo.property("manualMode"):
+            combo.setProperty("manualMode", True)
+            combo.setEditable(True)
+            combo.lineEdit().setPlaceholderText("Type a custom value")
+            combo.lineEdit().clear()
+        elif combo.isEditable() and value in combo.property("manualOptions"):
+            combo.setProperty("manualMode", False)
+            combo.setEditable(False)
+
+    combo.currentTextChanged.connect(selection_changed)
+    combo.setToolTip("Choose a value. Select Other to type a custom value.")
+    return combo
+
+def set_combo_value(combo, value):
+    value = str(value or "")
+    if not value:
+        combo.setCurrentIndex(0)
+    elif value in combo.property("manualOptions"):
+        combo.setCurrentText(value)
+        return
+    combo.setProperty("manualMode", True)
+    combo.setEditable(True)
+    combo.setCurrentText(value)
+    combo.lineEdit().setPlaceholderText("Type a custom value")
 
 def configure_logging():
     os.makedirs(LOG_DIR, exist_ok=True)
@@ -77,18 +115,19 @@ class AssetDialog(QDialog):
         super().__init__(parent)
         self.asset = asset
         self.setWindowTitle("Edit Asset" if asset else "Register New Asset")
-        self.resize(650, 720)
+        self.resize(650, 900)
         outer = QVBoxLayout(self)
         form_widget = QWidget()
         form = QFormLayout()
         form_widget.setLayout(form)
         self.fields = {}
         def line(key, label, value=""):
-            w = QLineEdit(str(value or ""))
+            w = manual_combo(db.list_asset_field_values(key))
+            if value:
+                set_combo_value(w, value)
             self.fields[key] = w
             form.addRow(label, w)
-        self.device = QComboBox()
-        self.device.addItems(DEVICE_TYPES)
+        self.device = manual_combo(DEVICE_TYPES)
         self.fields["device_type"] = self.device
         form.addRow("Device type *", self.device)
         self.form = form
@@ -96,36 +135,50 @@ class AssetDialog(QDialog):
         for key, label in [
             ("brand","Brand"),("model","Model"),("manufacturer_serial","Manufacturer serial number"),
             ("processor","Processor"),("ram","RAM"),("storage","Storage"),("operating_system","Operating system"),
-            ("staff_name","Assigned staff"),("purchase_date","Purchase date (YYYY-MM-DD)"),
-            ("warranty_expiry","Warranty expiry (YYYY-MM-DD)")
         ]:
             line(key, label, asset[key] if asset else "")
             self.field_labels[key] = form.labelForField(self.fields[key])
+        self.fields["staff_name"] = QLineEdit(str(asset["staff_name"] or "") if asset else "")
+        form.addRow("Assigned staff", self.fields["staff_name"])
+        self.field_labels["staff_name"] = form.labelForField(self.fields["staff_name"])
+        for key, label in [("purchase_date", "Purchase date (YYYY-MM-DD)"),
+                           ("warranty_expiry", "Warranty expiry (YYYY-MM-DD)")]:
+            widget = QDateEdit()
+            widget.setCalendarPopup(True)
+            widget.setDisplayFormat("yyyy-MM-dd")
+            widget.setMinimumDate(QDate(1900, 1, 1))
+            widget.setSpecialValueText("")
+            widget.setDate(QDate(1900, 1, 1))
+            widget.lineEdit().setReadOnly(False)
+            widget.lineEdit().setPlaceholderText("YYYY-MM-DD")
+            widget.setKeyboardTracking(False)
+            if asset and asset[key]:
+                parsed = QDate.fromString(str(asset[key]), "yyyy-MM-dd")
+                if parsed.isValid():
+                    widget.setDate(parsed)
+            self.fields[key] = widget
+            form.addRow(label, widget)
+            self.field_labels[key] = form.labelForField(widget)
         self.device.currentTextChanged.connect(self._update_component_fields)
         self.department = QComboBox()
-        self.department.addItem("(Not assigned)", None)
+        self.department.addItem("(Select department)", None)
         for d in db.list_departments():
             self.department.addItem(f'{d["code"]} — {d["name"]}', d["id"])
         form.addRow("Department", self.department)
         self.group = QComboBox()
-        self.group.addItem("(No parent group)", None)
+        self.group.addItem("(Select parent group)", None)
         for g in db.list_groups():
             self.group.addItem(f'{g["parent_code"]} — {g["group_name"]}', g["id"])
         form.addRow("Parent group", self.group)
         # Existing setup links are retained in the database, but Parent Group
         # is the only connection shown to users.
         self.setup_id = asset["setup_id"] if asset else None
-        self.status = QComboBox()
-        self.status.addItems(STATUSES)
+        self.status = manual_combo(STATUSES, "Select status")
         form.addRow("Status", self.status)
         self.notes = QTextEdit()
         self.notes.setMaximumHeight(85)
         form.addRow("Notes", self.notes)
-        scroll = QScrollArea()
-        scroll.setWidgetResizable(True)
-        scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        scroll.setWidget(form_widget)
-        outer.addWidget(scroll, 1)
+        outer.addWidget(form_widget, 1)
         buttons = QHBoxLayout()
         save = QPushButton("Save Asset")
         cancel = QPushButton("Cancel")
@@ -137,12 +190,17 @@ class AssetDialog(QDialog):
         buttons.addWidget(save)
         outer.addLayout(buttons)
         if asset:
-            self.device.setCurrentText(asset["device_type"])
-            self.status.setCurrentText(asset["status"])
+            set_combo_value(self.device, asset["device_type"])
+            set_combo_value(self.status, asset["status"])
             self.notes.setPlainText(asset["notes"] or "")
             for key, widget in self.fields.items():
                 if key == "device_type": continue
-                widget.setText(str(asset[key] or ""))
+                if isinstance(widget, QLineEdit):
+                    widget.setText(str(asset[key] or ""))
+                elif isinstance(widget, QDateEdit):
+                    continue
+                else:
+                    set_combo_value(widget, asset[key])
             self._select_data(self.department, asset["department_id"])
             self._select_data(self.group, asset["group_id"])
         self._update_component_fields(self.device.currentText())
@@ -162,8 +220,17 @@ class AssetDialog(QDialog):
                 return
 
     def get_data(self):
-        result = {k: w.currentText() if isinstance(w, QComboBox) else w.text()
-                  for k, w in self.fields.items()}
+        result = {}
+        for key, widget in self.fields.items():
+            if isinstance(widget, QComboBox):
+                result[key] = widget.currentText()
+            elif isinstance(widget, QDateEdit):
+                result[key] = (
+                    "" if widget.date() == widget.minimumDate()
+                    else widget.date().toString("yyyy-MM-dd")
+                )
+            else:
+                result[key] = widget.text()
         result["device_type"] = self.device.currentText()
         result["department_id"] = self.department.currentData()
         result["group_id"] = self.group.currentData()
@@ -184,8 +251,7 @@ class GroupDialog(QDialog):
         self.resize(480, 390)
         form = QFormLayout(self)
         self.name = QLineEdit()
-        self.type = QComboBox()
-        self.type.addItems(["Department", "Room", "Staff Assignment", "Other"])
+        self.type = manual_combo(["Department", "Room", "Staff Assignment"])
         self.department = QComboBox()
         self.department.addItem("(No department)", None)
         for d in db.list_departments():
@@ -238,8 +304,7 @@ class FaultDialog(QDialog):
         self.description = QTextEdit()
         self.description.setMaximumHeight(100)
         self.reporter = QLineEdit()
-        self.priority = QComboBox()
-        self.priority.addItems(["Low", "Normal", "High", "Critical"])
+        self.priority = manual_combo(["Low", "Normal", "High", "Critical"])
         asset_row = QWidget()
         asset_layout = QHBoxLayout(asset_row)
         asset_layout.setContentsMargins(0, 0, 0, 0)
@@ -505,7 +570,11 @@ class MainWindow(QMainWindow):
         self.setWindowIcon(QIcon(APP_ICON))
         self.resize(1400, 850)
         self.pages = QStackedWidget()
-        self.page_names = ["Dashboard", "Assets", "Groups", "Departments", "Faults", "Movements"]
+        self.page_names = ["Dashboard", "Assets", "Groups", "Departments", "Faults",
+                           "Movements", "Clear Data"]
+        self.page_size = 25
+        self.page_numbers = {}
+        self.pagination_labels = {}
         self.nav_buttons = []
         root = QWidget()
         root_layout = QHBoxLayout(root)
@@ -532,10 +601,6 @@ class MainWindow(QMainWindow):
         backup.setObjectName("NavButton")
         backup.clicked.connect(self.backup)
         side.addWidget(backup)
-        clear_data = QPushButton("Clear All Data")
-        clear_data.setObjectName("DangerButton")
-        clear_data.clicked.connect(self.clear_all_data)
-        side.addWidget(clear_data)
         root_layout.addWidget(sidebar)
         content = QWidget()
         content_layout = QVBoxLayout(content)
@@ -560,6 +625,7 @@ class MainWindow(QMainWindow):
         self.pages.addWidget(self.departments_page())
         self.pages.addWidget(self.faults_page())
         self.pages.addWidget(self.movements_page())
+        self.pages.addWidget(self.clear_data_page())
         self.go(0)
         self.refresh_all()
 
@@ -571,6 +637,47 @@ class MainWindow(QMainWindow):
         sub = QLabel(subtitle); sub.setObjectName("Muted")
         lay.addWidget(title_l); lay.addWidget(sub)
         return w
+
+    def pagination_controls(self, key, refresh_callback):
+        bar = QWidget()
+        layout = QHBoxLayout(bar)
+        layout.setContentsMargins(0, 8, 0, 0)
+        previous = QPushButton("Previous")
+        previous.setObjectName("SecondaryButton")
+        previous.clicked.connect(
+            lambda: self.change_page(key, -1, refresh_callback)
+        )
+        label = QLabel("Page 1 of 1")
+        label.setObjectName("Muted")
+        label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        next_button = QPushButton("Next")
+        next_button.setObjectName("SecondaryButton")
+        next_button.clicked.connect(
+            lambda: self.change_page(key, 1, refresh_callback)
+        )
+        layout.addStretch()
+        layout.addWidget(previous)
+        layout.addWidget(label)
+        layout.addWidget(next_button)
+        layout.addStretch()
+        self.page_numbers[key] = 0
+        self.pagination_labels[key] = (label, previous, next_button)
+        return bar
+
+    def change_page(self, key, offset, refresh_callback):
+        self.page_numbers[key] = max(0, self.page_numbers.get(key, 0) + offset)
+        refresh_callback()
+
+    def page_rows(self, key, rows):
+        total_pages = max(1, (len(rows) + self.page_size - 1) // self.page_size)
+        page = min(self.page_numbers.get(key, 0), total_pages - 1)
+        self.page_numbers[key] = page
+        label, previous, next_button = self.pagination_labels[key]
+        label.setText(f"Page {page + 1} of {total_pages}  ({len(rows)} records)")
+        previous.setEnabled(page > 0)
+        next_button.setEnabled(page < total_pages - 1)
+        start = page * self.page_size
+        return rows[start:start + self.page_size]
 
     def dashboard_page(self):
         page = QWidget(); lay = QVBoxLayout(page)
@@ -588,6 +695,11 @@ class MainWindow(QMainWindow):
             grid.addWidget(card, idx//3, idx%3)
             self.dashboard_cards[key] = vl
         lay.addLayout(grid)
+        stock_title = QLabel("In-Hand / In-Stock Assets")
+        stock_title.setObjectName("PageTitle")
+        lay.addWidget(stock_title)
+        self.stock_cards_layout = QGridLayout()
+        lay.addLayout(self.stock_cards_layout)
         lay.addStretch()
         hint = QLabel("Start by adding departments, then create Parent Groups and register physical assets.")
         hint.setObjectName("Muted")
@@ -609,9 +721,14 @@ class MainWindow(QMainWindow):
         bar.addWidget(qr)
         export = QPushButton("Export Excel"); export.setObjectName("SecondaryButton"); export.clicked.connect(self.export_excel)
         bar.addWidget(export)
+        import_data = QPushButton("Import Excel / CSV")
+        import_data.setObjectName("SecondaryButton")
+        import_data.clicked.connect(self.import_assets)
+        bar.addWidget(import_data)
         lay.addLayout(bar)
         self.asset_table = QTableWidget()
         lay.addWidget(self.asset_table, 1)
+        lay.addWidget(self.pagination_controls("assets", self.refresh_assets))
         return page
 
     def groups_page(self):
@@ -633,6 +750,7 @@ class MainWindow(QMainWindow):
         self.group_table.cellClicked.connect(self.show_group_details)
         self.group_table.cellDoubleClicked.connect(self.show_group_details)
         lay.addWidget(self.group_table, 1)
+        lay.addWidget(self.pagination_controls("groups", self.refresh_groups))
         return page
 
     def departments_page(self):
@@ -643,6 +761,7 @@ class MainWindow(QMainWindow):
         bar.addWidget(add); bar.addStretch()
         lay.addLayout(bar)
         self.department_table = QTableWidget(); lay.addWidget(self.department_table, 1)
+        lay.addWidget(self.pagination_controls("departments", self.refresh_departments))
         return page
 
     def faults_page(self):
@@ -659,6 +778,7 @@ class MainWindow(QMainWindow):
         lay.addLayout(bar)
         self.fault_table = QTableWidget(); lay.addWidget(self.fault_table, 1)
         self.fault_table.cellClicked.connect(self.fault_asset_clicked)
+        lay.addWidget(self.pagination_controls("faults", self.refresh_faults))
         return page
 
     def movements_page(self):
@@ -670,6 +790,34 @@ class MainWindow(QMainWindow):
         lay.addLayout(bar)
         self.movement_table = QTableWidget(); lay.addWidget(self.movement_table, 1)
         self.movement_table.cellClicked.connect(self.movement_asset_clicked)
+        lay.addWidget(self.pagination_controls("movements", self.refresh_movements))
+        return page
+
+    def clear_data_page(self):
+        page = QWidget()
+        layout = QVBoxLayout(page)
+        layout.addWidget(self.page_header(
+            "Clear All Data",
+            "Permanently remove all records while keeping the database structure",
+        ))
+        card = QFrame()
+        card.setObjectName("Card")
+        card_layout = QVBoxLayout(card)
+        message = QLabel(
+            "This action deletes all departments, parent groups, assets, fault reports, "
+            "repairs, and movement history. It cannot be undone."
+        )
+        message.setWordWrap(True)
+        card_layout.addWidget(message)
+        clear = QPushButton("Clear All Data")
+        clear.setObjectName("DangerButton")
+        clear.clicked.connect(self.clear_all_data)
+        button_row = QHBoxLayout()
+        button_row.addStretch()
+        button_row.addWidget(clear)
+        card_layout.addLayout(button_row)
+        layout.addWidget(card)
+        layout.addStretch()
         return page
 
     def go(self, idx):
@@ -685,10 +833,32 @@ class MainWindow(QMainWindow):
         counts = db.dashboard_counts()
         for k, v in counts.items():
             self.dashboard_cards[k].setText(str(v))
+        while self.stock_cards_layout.count():
+            item = self.stock_cards_layout.takeAt(0)
+            if item.widget():
+                item.widget().deleteLater()
+        stock_rows = db.in_stock_counts()
+        if not stock_rows:
+            empty = QLabel("No assets are currently marked as In Storage.")
+            empty.setObjectName("Muted")
+            self.stock_cards_layout.addWidget(empty, 0, 0)
+            return
+        for index, row in enumerate(stock_rows):
+            card = QFrame()
+            card.setObjectName("Card")
+            card_layout = QVBoxLayout(card)
+            title = QLabel(row["device_type"])
+            title.setObjectName("CardTitle")
+            value = QLabel(str(row["count"]))
+            value.setObjectName("CardValue")
+            card_layout.addWidget(title)
+            card_layout.addWidget(value)
+            self.stock_cards_layout.addWidget(card, index // 4, index % 4)
 
     def refresh_assets(self, *_):
         if not hasattr(self, "asset_table"): return
         rows = db.list_assets(self.asset_search.text() if hasattr(self, "asset_search") else "")
+        rows = self.page_rows("assets", rows)
         data = []
         self.asset_row_ids = []
         for a in rows:
@@ -711,6 +881,7 @@ class MainWindow(QMainWindow):
                     ("parent_code", "group_name", "group_type", "department_name", "block", "floor", "room", "staff_name")
                 ).casefold()
             ]
+        rows = self.page_rows("groups", rows)
         self.group_row_ids = [group["id"] for group in rows]
         set_table(self.group_table, ["Parent ID","Group Name","Type","Department","Block","Floor","Room","Staff"],
                   [[g["parent_code"],g["group_name"],g["group_type"],g["department_name"] or "",
@@ -729,12 +900,14 @@ class MainWindow(QMainWindow):
     def refresh_departments(self):
         if not hasattr(self, "department_table"): return
         rows = db.list_departments()
+        rows = self.page_rows("departments", rows)
         set_table(self.department_table, ["Code","Department Name","Created"],
                   [[d["code"],d["name"],d["created_at"]] for d in rows])
 
     def refresh_faults(self, *_):
         if not hasattr(self, "fault_table"): return
         rows = db.list_faults(self.fault_search.text() if hasattr(self, "fault_search") else "")
+        rows = self.page_rows("faults", rows)
         self.fault_row_ids = [f["id"] for f in rows]
         set_table(self.fault_table, ["Fault ID","Asset ID","Device","Reported","Description","Priority","Status"],
                   [[f["fault_code"],f["asset_code"],f["device_type"],f["reported_date"],
@@ -747,6 +920,7 @@ class MainWindow(QMainWindow):
         with db.connect() as con:
             rows = con.execute("""SELECT m.*, a.asset_code FROM asset_movements m
                                   JOIN assets a ON a.id=m.asset_id ORDER BY m.id DESC""").fetchall()
+        rows = self.page_rows("movements", rows)
         set_table(self.movement_table, ["Asset ID","Date","From","To","Reason","Moved By"],
                   [[m["asset_code"],m["movement_date"],m["from_location"],m["to_location"],
                     m["reason"],m["moved_by"]] for m in rows])
@@ -781,7 +955,12 @@ class MainWindow(QMainWindow):
         dlg = AssetDialog(self)
         if dlg.exec():
             try:
-                code = db.save_asset(dlg.get_data())
+                data = dlg.get_data()
+                if not data["device_type"] or data["device_type"] == "Select an option":
+                    raise ValueError("Device type is required.")
+                if not data["status"] or data["status"] == "Select status":
+                    raise ValueError("Status is required.")
+                code = db.save_asset(data)
                 self.refresh_all()
                 QMessageBox.information(self, "Asset registered", f"Asset created successfully.\n\nAsset ID: {code}")
             except Exception as e: show_error(self, e)
@@ -927,6 +1106,51 @@ class MainWindow(QMainWindow):
             db.export_assets_xlsx(path)
             QMessageBox.information(self, "Export complete", f"Exported to:\n{path}")
         except Exception as e: show_error(self, e)
+
+    def import_assets(self):
+        path, _ = QFileDialog.getOpenFileName(
+            self,
+            "Import Asset Register",
+            "",
+            "Supported files (*.xlsx *.csv);;Excel Workbook (*.xlsx);;CSV files (*.csv)",
+        )
+        if not path:
+            return
+        try:
+            if path.casefold().endswith(".csv"):
+                with open(path, "r", encoding="utf-8-sig", newline="") as file:
+                    rows = list(csv.DictReader(file))
+            else:
+                from openpyxl import load_workbook
+                workbook = load_workbook(path, read_only=True, data_only=True)
+                sheet = workbook.active
+                values = list(sheet.values)
+                workbook.close()
+                if not values:
+                    raise ValueError("The selected workbook is empty.")
+                headers = [str(value or "").strip() for value in values[0]]
+                rows = [dict(zip(headers, values_row)) for values_row in values[1:]]
+            if not rows:
+                raise ValueError("The selected file contains no data rows.")
+            answer = QMessageBox.question(
+                self,
+                "Confirm import",
+                f"Import {len(rows)} asset row(s)?\n\n"
+                "New asset IDs will be generated automatically. Existing records will not be changed.",
+                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                QMessageBox.StandardButton.Yes,
+            )
+            if answer != QMessageBox.StandardButton.Yes:
+                return
+            imported = db.import_assets_rows(rows)
+            self.refresh_all()
+            QMessageBox.information(
+                self,
+                "Import complete",
+                f"Successfully imported {imported} asset(s).",
+            )
+        except Exception as exc:
+            show_error(self, exc)
 
     def backup(self):
         path, _ = QFileDialog.getSaveFileName(self, "Backup Database", "asset_management_backup.db",

@@ -257,6 +257,22 @@ def list_assets(search=""):
           ORDER BY a.id DESC
         """, (search, search, search, search, search, search, search, search)).fetchall()
 
+def list_asset_field_values(field):
+    allowed = {
+        "brand", "model", "manufacturer_serial", "processor", "ram", "storage",
+        "operating_system", "staff_name", "purchase_date", "warranty_expiry",
+    }
+    if field not in allowed:
+        raise ValueError("Invalid asset field.")
+    with connect() as con:
+        return [
+            row[0] for row in con.execute(
+                f"""SELECT DISTINCT {field} FROM assets
+                    WHERE TRIM(COALESCE({field}, '')) <> ''
+                    ORDER BY {field} COLLATE NOCASE"""
+            ).fetchall()
+        ]
+
 def get_asset(asset_id):
     with connect() as con:
         return con.execute("SELECT * FROM assets WHERE id=?", (asset_id,)).fetchone()
@@ -299,6 +315,88 @@ def save_asset(data, asset_id=None):
                         VALUES(?,{placeholders},?,?)""",
                     [code] + vals + [now, now])
         return code
+
+def import_assets_rows(rows):
+    """Import asset-register rows in one transaction and return the count."""
+    fields = ["device_type", "brand", "model", "manufacturer_serial", "processor",
+              "ram", "storage", "operating_system", "department_id", "location_id",
+              "group_id", "setup_id", "staff_name", "status", "purchase_date",
+              "warranty_expiry", "notes"]
+    imported = 0
+    with connect() as con:
+        for row_number, raw in enumerate(rows, start=2):
+            row = {str(key).strip().casefold(): value for key, value in raw.items()
+                   if key is not None}
+            if not any(str(value or "").strip() for value in row.values()):
+                continue
+            device_type = str(row.get("device type", "") or "").strip()
+            if not device_type:
+                raise ValueError(f"Import row {row_number}: Device Type is required.")
+            if device_type not in ASSET_PREFIXES:
+                device_type = "Other"
+            status = str(row.get("status", "Working") or "Working").strip() or "Working"
+            if status not in ("Working", "Faulty", "Under Repair", "In Storage", "Retired"):
+                status = "Working"
+
+            department_value = str(row.get("department", "") or "").strip()
+            department_id = None
+            if department_value:
+                department = con.execute(
+                    "SELECT id FROM departments WHERE code=? OR name=? COLLATE NOCASE",
+                    (department_value, department_value),
+                ).fetchone()
+                if not department:
+                    raise ValueError(
+                        f"Import row {row_number}: department '{department_value}' was not found."
+                    )
+                department_id = department["id"]
+
+            group_value = str(row.get("parent id", "") or "").strip()
+            group_id = None
+            if group_value:
+                group = con.execute(
+                    "SELECT id, department_id FROM asset_groups WHERE parent_code=?",
+                    (group_value,),
+                ).fetchone()
+                if not group:
+                    raise ValueError(
+                        f"Import row {row_number}: Parent ID '{group_value}' was not found."
+                    )
+                if department_id and group["department_id"] not in (None, department_id):
+                    raise ValueError(
+                        f"Import row {row_number}: Parent ID does not belong to the department."
+                    )
+                group_id = group["id"]
+
+            values = {
+                "device_type": device_type,
+                "brand": str(row.get("brand", "") or "").strip(),
+                "model": str(row.get("model", "") or "").strip(),
+                "manufacturer_serial": str(row.get("manufacturer serial", "") or "").strip(),
+                "processor": str(row.get("processor", "") or "").strip(),
+                "ram": str(row.get("ram", "") or "").strip(),
+                "storage": str(row.get("storage", "") or "").strip(),
+                "operating_system": str(row.get("os", "") or "").strip(),
+                "department_id": department_id,
+                "location_id": None,
+                "group_id": group_id,
+                "setup_id": None,
+                "staff_name": str(row.get("staff", "") or "").strip(),
+                "status": status,
+                "purchase_date": str(row.get("purchase date", "") or "").strip(),
+                "warranty_expiry": str(row.get("warranty expiry", "") or "").strip(),
+                "notes": str(row.get("notes", "") or "").strip(),
+            }
+            now = _now()
+            code = _next_asset_code(con, device_type)
+            placeholders = ",".join("?" for _ in fields)
+            con.execute(
+                f"""INSERT INTO assets(asset_code,{",".join(fields)},created_at,updated_at)
+                    VALUES(?,{placeholders},?,?)""",
+                [code] + [values[field] for field in fields] + [now, now],
+            )
+            imported += 1
+    return imported
 
 def add_fault(asset_code, reported_date, description, reported_by, priority):
     with connect() as con:
@@ -426,6 +524,16 @@ def dashboard_counts():
         open_faults = con.execute("SELECT COUNT(*) FROM fault_reports WHERE status!='Resolved'").fetchone()[0]
         return {"total":total,"working":working,"faulty":faulty,"repair":repair,
                 "groups":groups,"open_faults":open_faults}
+
+def in_stock_counts():
+    with connect() as con:
+        return con.execute("""
+            SELECT device_type, COUNT(*) AS count
+            FROM assets
+            WHERE status='In Storage'
+            GROUP BY device_type
+            ORDER BY device_type
+        """).fetchall()
 
 def clear_all_data():
     """Remove every user-created record while keeping the database schema."""
